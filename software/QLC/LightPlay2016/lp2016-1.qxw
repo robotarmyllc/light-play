@@ -1,0 +1,966 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE Workspace>
+<Workspace xmlns="http://www.qlcplus.org/Workspace" CurrentWindow="FixtureManager">
+ <Creator>
+  <Name>Q Light Controller Plus</Name>
+  <Version>4.10.1</Version>
+  <Author>Mark Koch</Author>
+ </Creator>
+ <Engine>
+  <InputOutputMap>
+   <Universe Passthrough="False" ID="0" Name="Universe 1"/>
+   <Universe Passthrough="False" ID="1" Name="Universe 2"/>
+   <Universe Passthrough="False" ID="2" Name="Universe 3"/>
+   <Universe Passthrough="False" ID="3" Name="Universe 4"/>
+  </InputOutputMap>
+  <Fixture>
+   <Manufacturer>Robot Army</Manufacturer>
+   <Model>Delta 1</Model>
+   <Mode>Default</Mode>
+   <ID>0</ID>
+   <Name>Delta #01</Name>
+   <Universe>0</Universe>
+   <Address>5</Address>
+   <Channels>6</Channels>
+  </Fixture>
+  <Fixture>
+   <Manufacturer>Robot Army</Manufacturer>
+   <Model>Delta 1</Model>
+   <Mode>Default</Mode>
+   <ID>1</ID>
+   <Name>Delta #02</Name>
+   <Universe>0</Universe>
+   <Address>11</Address>
+   <Channels>6</Channels>
+  </Fixture>
+  <Fixture>
+   <Manufacturer>Robot Army</Manufacturer>
+   <Model>Delta 1</Model>
+   <Mode>Default</Mode>
+   <ID>2</ID>
+   <Name>Delta #03</Name>
+   <Universe>0</Universe>
+   <Address>17</Address>
+   <Channels>6</Channels>
+  </Fixture>
+  <Fixture>
+   <Manufacturer>Robot Army</Manufacturer>
+   <Model>Delta 1</Model>
+   <Mode>Default</Mode>
+   <ID>3</ID>
+   <Name>Delta #04</Name>
+   <Universe>0</Universe>
+   <Address>23</Address>
+   <Channels>6</Channels>
+  </Fixture>
+  <Fixture>
+   <Manufacturer>Robot Army</Manufacturer>
+   <Model>Delta 1</Model>
+   <Mode>Default</Mode>
+   <ID>4</ID>
+   <Name>Delta #05</Name>
+   <Universe>0</Universe>
+   <Address>29</Address>
+   <Channels>6</Channels>
+  </Fixture>
+  <Fixture>
+   <Manufacturer>Robot Army</Manufacturer>
+   <Model>Delta 1</Model>
+   <Mode>Default</Mode>
+   <ID>5</ID>
+   <Name>Delta #06</Name>
+   <Universe>0</Universe>
+   <Address>35</Address>
+   <Channels>6</Channels>
+  </Fixture>
+  <Fixture>
+   <Manufacturer>Robot Army</Manufacturer>
+   <Model>Delta 1</Model>
+   <Mode>Default</Mode>
+   <ID>6</ID>
+   <Name>Delta #07</Name>
+   <Universe>0</Universe>
+   <Address>41</Address>
+   <Channels>6</Channels>
+  </Fixture>
+  <Fixture>
+   <Manufacturer>Robot Army</Manufacturer>
+   <Model>Delta 1</Model>
+   <Mode>Default</Mode>
+   <ID>7</ID>
+   <Name>Delta #08</Name>
+   <Universe>0</Universe>
+   <Address>47</Address>
+   <Channels>6</Channels>
+  </Fixture>
+  <Fixture>
+   <Manufacturer>Robot Army</Manufacturer>
+   <Model>Delta 1</Model>
+   <Mode>Default</Mode>
+   <ID>8</ID>
+   <Name>Delta #09</Name>
+   <Universe>0</Universe>
+   <Address>53</Address>
+   <Channels>6</Channels>
+  </Fixture>
+  <Fixture>
+   <Manufacturer>Robot Army</Manufacturer>
+   <Model>Delta 1</Model>
+   <Mode>Default</Mode>
+   <ID>9</ID>
+   <Name>Delta #10</Name>
+   <Universe>0</Universe>
+   <Address>59</Address>
+   <Channels>6</Channels>
+  </Fixture>
+  <Fixture>
+   <Manufacturer>Robot Army</Manufacturer>
+   <Model>Delta 1</Model>
+   <Mode>Default</Mode>
+   <ID>10</ID>
+   <Name>Delta #11</Name>
+   <Universe>0</Universe>
+   <Address>65</Address>
+   <Channels>6</Channels>
+  </Fixture>
+  <Fixture>
+   <Manufacturer>Robot Army</Manufacturer>
+   <Model>Delta 1</Model>
+   <Mode>Default</Mode>
+   <ID>11</ID>
+   <Name>Delta #12</Name>
+   <Universe>0</Universe>
+   <Address>71</Address>
+   <Channels>6</Channels>
+  </Fixture>
+  <Fixture>
+   <Manufacturer>Robot Army</Manufacturer>
+   <Model>Delta 1</Model>
+   <Mode>Default</Mode>
+   <ID>12</ID>
+   <Name>Delta #13</Name>
+   <Universe>0</Universe>
+   <Address>77</Address>
+   <Channels>6</Channels>
+  </Fixture>
+  <Fixture>
+   <Manufacturer>Robot Army</Manufacturer>
+   <Model>Delta 1</Model>
+   <Mode>Default</Mode>
+   <ID>13</ID>
+   <Name>Delta #14</Name>
+   <Universe>0</Universe>
+   <Address>83</Address>
+   <Channels>6</Channels>
+  </Fixture>
+  <Fixture>
+   <Manufacturer>Robot Army</Manufacturer>
+   <Model>Delta 1</Model>
+   <Mode>Default</Mode>
+   <ID>14</ID>
+   <Name>Delta #15</Name>
+   <Universe>0</Universe>
+   <Address>89</Address>
+   <Channels>6</Channels>
+  </Fixture>
+  <Fixture>
+   <Manufacturer>Robot Army</Manufacturer>
+   <Model>Delta 1</Model>
+   <Mode>Default</Mode>
+   <ID>15</ID>
+   <Name>Delta #16</Name>
+   <Universe>0</Universe>
+   <Address>95</Address>
+   <Channels>6</Channels>
+  </Fixture>
+  <Fixture>
+   <Manufacturer>Robot Army</Manufacturer>
+   <Model>Delta 1</Model>
+   <Mode>Default</Mode>
+   <ID>16</ID>
+   <Name>Delta #17</Name>
+   <Universe>0</Universe>
+   <Address>101</Address>
+   <Channels>6</Channels>
+  </Fixture>
+  <Fixture>
+   <Manufacturer>Robot Army</Manufacturer>
+   <Model>Delta 1</Model>
+   <Mode>Default</Mode>
+   <ID>17</ID>
+   <Name>Delta #18</Name>
+   <Universe>0</Universe>
+   <Address>107</Address>
+   <Channels>6</Channels>
+  </Fixture>
+  <Fixture>
+   <Manufacturer>Robot Army</Manufacturer>
+   <Model>Delta 1</Model>
+   <Mode>Default</Mode>
+   <ID>18</ID>
+   <Name>Delta #19</Name>
+   <Universe>0</Universe>
+   <Address>113</Address>
+   <Channels>6</Channels>
+  </Fixture>
+  <Fixture>
+   <Manufacturer>Robot Army</Manufacturer>
+   <Model>Delta 1</Model>
+   <Mode>Default</Mode>
+   <ID>19</ID>
+   <Name>Delta #20</Name>
+   <Universe>0</Universe>
+   <Address>119</Address>
+   <Channels>6</Channels>
+  </Fixture>
+  <Fixture>
+   <Manufacturer>Robot Army</Manufacturer>
+   <Model>Delta 1</Model>
+   <Mode>Default</Mode>
+   <ID>20</ID>
+   <Name>Delta #21</Name>
+   <Universe>0</Universe>
+   <Address>125</Address>
+   <Channels>6</Channels>
+  </Fixture>
+  <Fixture>
+   <Manufacturer>Robot Army</Manufacturer>
+   <Model>Delta 1</Model>
+   <Mode>Default</Mode>
+   <ID>21</ID>
+   <Name>Delta #22</Name>
+   <Universe>0</Universe>
+   <Address>131</Address>
+   <Channels>6</Channels>
+  </Fixture>
+  <Fixture>
+   <Manufacturer>Robot Army</Manufacturer>
+   <Model>Delta 1</Model>
+   <Mode>Default</Mode>
+   <ID>22</ID>
+   <Name>Delta #23</Name>
+   <Universe>0</Universe>
+   <Address>137</Address>
+   <Channels>6</Channels>
+  </Fixture>
+  <Fixture>
+   <Manufacturer>Robot Army</Manufacturer>
+   <Model>Delta 1</Model>
+   <Mode>Default</Mode>
+   <ID>23</ID>
+   <Name>Delta #24</Name>
+   <Universe>0</Universe>
+   <Address>143</Address>
+   <Channels>6</Channels>
+  </Fixture>
+  <Fixture>
+   <Manufacturer>Robot Army</Manufacturer>
+   <Model>Delta 1</Model>
+   <Mode>Default</Mode>
+   <ID>24</ID>
+   <Name>Delta #25</Name>
+   <Universe>0</Universe>
+   <Address>149</Address>
+   <Channels>6</Channels>
+  </Fixture>
+  <Fixture>
+   <Manufacturer>Robot Army</Manufacturer>
+   <Model>Delta 1</Model>
+   <Mode>Default</Mode>
+   <ID>25</ID>
+   <Name>Delta #26</Name>
+   <Universe>0</Universe>
+   <Address>155</Address>
+   <Channels>6</Channels>
+  </Fixture>
+  <Fixture>
+   <Manufacturer>Robot Army</Manufacturer>
+   <Model>Delta 1</Model>
+   <Mode>Default</Mode>
+   <ID>26</ID>
+   <Name>Delta #27</Name>
+   <Universe>0</Universe>
+   <Address>161</Address>
+   <Channels>6</Channels>
+  </Fixture>
+  <Fixture>
+   <Manufacturer>Robot Army</Manufacturer>
+   <Model>Delta 1</Model>
+   <Mode>Default</Mode>
+   <ID>27</ID>
+   <Name>Delta #28</Name>
+   <Universe>0</Universe>
+   <Address>167</Address>
+   <Channels>6</Channels>
+  </Fixture>
+  <Fixture>
+   <Manufacturer>Robot Army</Manufacturer>
+   <Model>Delta 1</Model>
+   <Mode>Default</Mode>
+   <ID>28</ID>
+   <Name>Delta #29</Name>
+   <Universe>0</Universe>
+   <Address>173</Address>
+   <Channels>6</Channels>
+  </Fixture>
+  <Fixture>
+   <Manufacturer>Robot Army</Manufacturer>
+   <Model>Delta 1</Model>
+   <Mode>Default</Mode>
+   <ID>29</ID>
+   <Name>Delta #30</Name>
+   <Universe>0</Universe>
+   <Address>179</Address>
+   <Channels>6</Channels>
+  </Fixture>
+  <Fixture>
+   <Manufacturer>Robot Army</Manufacturer>
+   <Model>Delta 1</Model>
+   <Mode>Default</Mode>
+   <ID>30</ID>
+   <Name>Delta #31</Name>
+   <Universe>0</Universe>
+   <Address>185</Address>
+   <Channels>6</Channels>
+  </Fixture>
+  <Fixture>
+   <Manufacturer>Robot Army</Manufacturer>
+   <Model>Delta 1</Model>
+   <Mode>Default</Mode>
+   <ID>31</ID>
+   <Name>Delta #32</Name>
+   <Universe>0</Universe>
+   <Address>191</Address>
+   <Channels>6</Channels>
+  </Fixture>
+  <Fixture>
+   <Manufacturer>Robot Army</Manufacturer>
+   <Model>Delta 1</Model>
+   <Mode>Default</Mode>
+   <ID>32</ID>
+   <Name>Delta #33</Name>
+   <Universe>0</Universe>
+   <Address>197</Address>
+   <Channels>6</Channels>
+  </Fixture>
+  <Fixture>
+   <Manufacturer>Robot Army</Manufacturer>
+   <Model>Delta 1</Model>
+   <Mode>Default</Mode>
+   <ID>33</ID>
+   <Name>Delta #34</Name>
+   <Universe>0</Universe>
+   <Address>203</Address>
+   <Channels>6</Channels>
+  </Fixture>
+  <Fixture>
+   <Manufacturer>Robot Army</Manufacturer>
+   <Model>Delta 1</Model>
+   <Mode>Default</Mode>
+   <ID>34</ID>
+   <Name>Delta #35</Name>
+   <Universe>0</Universe>
+   <Address>209</Address>
+   <Channels>6</Channels>
+  </Fixture>
+  <Fixture>
+   <Manufacturer>Robot Army</Manufacturer>
+   <Model>Delta 1</Model>
+   <Mode>Default</Mode>
+   <ID>35</ID>
+   <Name>Delta #36</Name>
+   <Universe>0</Universe>
+   <Address>215</Address>
+   <Channels>6</Channels>
+  </Fixture>
+  <Fixture>
+   <Manufacturer>Robot Army</Manufacturer>
+   <Model>Delta 1</Model>
+   <Mode>Default</Mode>
+   <ID>36</ID>
+   <Name>Delta #37</Name>
+   <Universe>0</Universe>
+   <Address>221</Address>
+   <Channels>6</Channels>
+  </Fixture>
+  <Fixture>
+   <Manufacturer>Robot Army</Manufacturer>
+   <Model>Delta 1</Model>
+   <Mode>Default</Mode>
+   <ID>37</ID>
+   <Name>Delta #38</Name>
+   <Universe>0</Universe>
+   <Address>227</Address>
+   <Channels>6</Channels>
+  </Fixture>
+  <Fixture>
+   <Manufacturer>Robot Army</Manufacturer>
+   <Model>Delta 1</Model>
+   <Mode>Default</Mode>
+   <ID>38</ID>
+   <Name>Delta #39</Name>
+   <Universe>0</Universe>
+   <Address>233</Address>
+   <Channels>6</Channels>
+  </Fixture>
+  <Fixture>
+   <Manufacturer>Robot Army</Manufacturer>
+   <Model>Delta 1</Model>
+   <Mode>Default</Mode>
+   <ID>39</ID>
+   <Name>Delta #40</Name>
+   <Universe>0</Universe>
+   <Address>239</Address>
+   <Channels>6</Channels>
+  </Fixture>
+  <Fixture>
+   <Manufacturer>Robot Army</Manufacturer>
+   <Model>Delta 1</Model>
+   <Mode>Default</Mode>
+   <ID>40</ID>
+   <Name>Delta #41</Name>
+   <Universe>0</Universe>
+   <Address>245</Address>
+   <Channels>6</Channels>
+  </Fixture>
+  <Fixture>
+   <Manufacturer>Robot Army</Manufacturer>
+   <Model>Delta 1</Model>
+   <Mode>Default</Mode>
+   <ID>41</ID>
+   <Name>Delta #42</Name>
+   <Universe>0</Universe>
+   <Address>251</Address>
+   <Channels>6</Channels>
+  </Fixture>
+  <Fixture>
+   <Manufacturer>Robot Army</Manufacturer>
+   <Model>Delta 1</Model>
+   <Mode>Default</Mode>
+   <ID>42</ID>
+   <Name>Delta #43</Name>
+   <Universe>0</Universe>
+   <Address>257</Address>
+   <Channels>6</Channels>
+  </Fixture>
+  <Fixture>
+   <Manufacturer>Robot Army</Manufacturer>
+   <Model>Delta 1</Model>
+   <Mode>Default</Mode>
+   <ID>43</ID>
+   <Name>Delta #44</Name>
+   <Universe>0</Universe>
+   <Address>263</Address>
+   <Channels>6</Channels>
+  </Fixture>
+  <Fixture>
+   <Manufacturer>Robot Army</Manufacturer>
+   <Model>Delta 1</Model>
+   <Mode>Default</Mode>
+   <ID>44</ID>
+   <Name>Delta #45</Name>
+   <Universe>0</Universe>
+   <Address>269</Address>
+   <Channels>6</Channels>
+  </Fixture>
+  <Fixture>
+   <Manufacturer>Robot Army</Manufacturer>
+   <Model>Delta 1</Model>
+   <Mode>Default</Mode>
+   <ID>45</ID>
+   <Name>Delta #46</Name>
+   <Universe>0</Universe>
+   <Address>275</Address>
+   <Channels>6</Channels>
+  </Fixture>
+  <Fixture>
+   <Manufacturer>Robot Army</Manufacturer>
+   <Model>Delta 1</Model>
+   <Mode>Default</Mode>
+   <ID>46</ID>
+   <Name>Delta #47</Name>
+   <Universe>0</Universe>
+   <Address>281</Address>
+   <Channels>6</Channels>
+  </Fixture>
+  <Fixture>
+   <Manufacturer>Robot Army</Manufacturer>
+   <Model>Delta 1</Model>
+   <Mode>Default</Mode>
+   <ID>47</ID>
+   <Name>Delta #48</Name>
+   <Universe>0</Universe>
+   <Address>287</Address>
+   <Channels>6</Channels>
+  </Fixture>
+  <Fixture>
+   <Manufacturer>Robot Army</Manufacturer>
+   <Model>Delta 1</Model>
+   <Mode>Default</Mode>
+   <ID>48</ID>
+   <Name>Delta #49</Name>
+   <Universe>0</Universe>
+   <Address>293</Address>
+   <Channels>6</Channels>
+  </Fixture>
+  <Fixture>
+   <Manufacturer>Robot Army</Manufacturer>
+   <Model>Delta 1</Model>
+   <Mode>Default</Mode>
+   <ID>49</ID>
+   <Name>Delta #50</Name>
+   <Universe>0</Universe>
+   <Address>299</Address>
+   <Channels>6</Channels>
+  </Fixture>
+  <Fixture>
+   <Manufacturer>Robot Army</Manufacturer>
+   <Model>Delta 1</Model>
+   <Mode>Default</Mode>
+   <ID>50</ID>
+   <Name>Delta #51</Name>
+   <Universe>0</Universe>
+   <Address>305</Address>
+   <Channels>6</Channels>
+  </Fixture>
+  <Fixture>
+   <Manufacturer>Robot Army</Manufacturer>
+   <Model>Delta 1</Model>
+   <Mode>Default</Mode>
+   <ID>51</ID>
+   <Name>Delta #52</Name>
+   <Universe>0</Universe>
+   <Address>311</Address>
+   <Channels>6</Channels>
+  </Fixture>
+  <Fixture>
+   <Manufacturer>Robot Army</Manufacturer>
+   <Model>Delta 1</Model>
+   <Mode>Default</Mode>
+   <ID>52</ID>
+   <Name>Delta #53</Name>
+   <Universe>0</Universe>
+   <Address>317</Address>
+   <Channels>6</Channels>
+  </Fixture>
+  <Fixture>
+   <Manufacturer>Robot Army</Manufacturer>
+   <Model>Delta 1</Model>
+   <Mode>Default</Mode>
+   <ID>53</ID>
+   <Name>Delta #54</Name>
+   <Universe>0</Universe>
+   <Address>323</Address>
+   <Channels>6</Channels>
+  </Fixture>
+  <Fixture>
+   <Manufacturer>Robot Army</Manufacturer>
+   <Model>Delta 1</Model>
+   <Mode>Default</Mode>
+   <ID>54</ID>
+   <Name>Delta #55</Name>
+   <Universe>0</Universe>
+   <Address>329</Address>
+   <Channels>6</Channels>
+  </Fixture>
+  <Fixture>
+   <Manufacturer>Robot Army</Manufacturer>
+   <Model>Delta 1</Model>
+   <Mode>Default</Mode>
+   <ID>55</ID>
+   <Name>Delta #56</Name>
+   <Universe>0</Universe>
+   <Address>335</Address>
+   <Channels>6</Channels>
+  </Fixture>
+  <Fixture>
+   <Manufacturer>Robot Army</Manufacturer>
+   <Model>Delta 1</Model>
+   <Mode>Default</Mode>
+   <ID>56</ID>
+   <Name>Delta #57</Name>
+   <Universe>0</Universe>
+   <Address>341</Address>
+   <Channels>6</Channels>
+  </Fixture>
+  <Fixture>
+   <Manufacturer>Robot Army</Manufacturer>
+   <Model>Delta 1</Model>
+   <Mode>Default</Mode>
+   <ID>57</ID>
+   <Name>Delta #58</Name>
+   <Universe>0</Universe>
+   <Address>347</Address>
+   <Channels>6</Channels>
+  </Fixture>
+  <Fixture>
+   <Manufacturer>Robot Army</Manufacturer>
+   <Model>Delta 1</Model>
+   <Mode>Default</Mode>
+   <ID>58</ID>
+   <Name>Delta #59</Name>
+   <Universe>0</Universe>
+   <Address>353</Address>
+   <Channels>6</Channels>
+  </Fixture>
+  <Fixture>
+   <Manufacturer>Robot Army</Manufacturer>
+   <Model>Delta 1</Model>
+   <Mode>Default</Mode>
+   <ID>59</ID>
+   <Name>Delta #60</Name>
+   <Universe>0</Universe>
+   <Address>359</Address>
+   <Channels>6</Channels>
+  </Fixture>
+  <Fixture>
+   <Manufacturer>Robot Army</Manufacturer>
+   <Model>Delta 1</Model>
+   <Mode>Default</Mode>
+   <ID>60</ID>
+   <Name>Delta #61</Name>
+   <Universe>0</Universe>
+   <Address>365</Address>
+   <Channels>6</Channels>
+  </Fixture>
+  <Fixture>
+   <Manufacturer>Robot Army</Manufacturer>
+   <Model>Delta 1</Model>
+   <Mode>Default</Mode>
+   <ID>61</ID>
+   <Name>Delta #62</Name>
+   <Universe>0</Universe>
+   <Address>371</Address>
+   <Channels>6</Channels>
+  </Fixture>
+  <Fixture>
+   <Manufacturer>Robot Army</Manufacturer>
+   <Model>Delta 1</Model>
+   <Mode>Default</Mode>
+   <ID>62</ID>
+   <Name>Delta #63</Name>
+   <Universe>0</Universe>
+   <Address>377</Address>
+   <Channels>6</Channels>
+  </Fixture>
+  <Fixture>
+   <Manufacturer>Robot Army</Manufacturer>
+   <Model>Delta 1</Model>
+   <Mode>Default</Mode>
+   <ID>63</ID>
+   <Name>Delta #64</Name>
+   <Universe>0</Universe>
+   <Address>383</Address>
+   <Channels>6</Channels>
+  </Fixture>
+  <Fixture>
+   <Manufacturer>Robot Army</Manufacturer>
+   <Model>Delta 1</Model>
+   <Mode>Default</Mode>
+   <ID>64</ID>
+   <Name>Delta #65</Name>
+   <Universe>0</Universe>
+   <Address>389</Address>
+   <Channels>6</Channels>
+  </Fixture>
+  <Fixture>
+   <Manufacturer>Robot Army</Manufacturer>
+   <Model>Delta 1</Model>
+   <Mode>Default</Mode>
+   <ID>65</ID>
+   <Name>Delta #66</Name>
+   <Universe>0</Universe>
+   <Address>395</Address>
+   <Channels>6</Channels>
+  </Fixture>
+  <Fixture>
+   <Manufacturer>Robot Army</Manufacturer>
+   <Model>Delta 1</Model>
+   <Mode>Default</Mode>
+   <ID>66</ID>
+   <Name>Delta #67</Name>
+   <Universe>0</Universe>
+   <Address>401</Address>
+   <Channels>6</Channels>
+  </Fixture>
+  <Fixture>
+   <Manufacturer>Robot Army</Manufacturer>
+   <Model>Delta 1</Model>
+   <Mode>Default</Mode>
+   <ID>67</ID>
+   <Name>Delta #68</Name>
+   <Universe>0</Universe>
+   <Address>407</Address>
+   <Channels>6</Channels>
+  </Fixture>
+  <Fixture>
+   <Manufacturer>Robot Army</Manufacturer>
+   <Model>Delta 1</Model>
+   <Mode>Default</Mode>
+   <ID>68</ID>
+   <Name>Delta #69</Name>
+   <Universe>0</Universe>
+   <Address>413</Address>
+   <Channels>6</Channels>
+  </Fixture>
+  <Fixture>
+   <Manufacturer>Robot Army</Manufacturer>
+   <Model>Delta 1</Model>
+   <Mode>Default</Mode>
+   <ID>69</ID>
+   <Name>Delta #70</Name>
+   <Universe>0</Universe>
+   <Address>419</Address>
+   <Channels>6</Channels>
+  </Fixture>
+  <Fixture>
+   <Manufacturer>Robot Army</Manufacturer>
+   <Model>Delta 1</Model>
+   <Mode>Default</Mode>
+   <ID>70</ID>
+   <Name>Delta #71</Name>
+   <Universe>0</Universe>
+   <Address>425</Address>
+   <Channels>6</Channels>
+  </Fixture>
+  <Fixture>
+   <Manufacturer>Robot Army</Manufacturer>
+   <Model>Delta 1</Model>
+   <Mode>Default</Mode>
+   <ID>71</ID>
+   <Name>Delta #72</Name>
+   <Universe>0</Universe>
+   <Address>431</Address>
+   <Channels>6</Channels>
+  </Fixture>
+  <Fixture>
+   <Manufacturer>Robot Army</Manufacturer>
+   <Model>Delta 1</Model>
+   <Mode>Default</Mode>
+   <ID>72</ID>
+   <Name>Delta #73</Name>
+   <Universe>0</Universe>
+   <Address>437</Address>
+   <Channels>6</Channels>
+  </Fixture>
+  <Fixture>
+   <Manufacturer>Robot Army</Manufacturer>
+   <Model>Delta 1</Model>
+   <Mode>Default</Mode>
+   <ID>73</ID>
+   <Name>Delta #74</Name>
+   <Universe>0</Universe>
+   <Address>443</Address>
+   <Channels>6</Channels>
+  </Fixture>
+  <Fixture>
+   <Manufacturer>Robot Army</Manufacturer>
+   <Model>Delta 1</Model>
+   <Mode>Default</Mode>
+   <ID>74</ID>
+   <Name>Delta #75</Name>
+   <Universe>0</Universe>
+   <Address>449</Address>
+   <Channels>6</Channels>
+  </Fixture>
+  <Fixture>
+   <Manufacturer>Robot Army</Manufacturer>
+   <Model>Delta 1</Model>
+   <Mode>Default</Mode>
+   <ID>75</ID>
+   <Name>Delta #76</Name>
+   <Universe>0</Universe>
+   <Address>455</Address>
+   <Channels>6</Channels>
+  </Fixture>
+  <Fixture>
+   <Manufacturer>Robot Army</Manufacturer>
+   <Model>Delta 1</Model>
+   <Mode>Default</Mode>
+   <ID>76</ID>
+   <Name>Delta #77</Name>
+   <Universe>0</Universe>
+   <Address>461</Address>
+   <Channels>6</Channels>
+  </Fixture>
+  <Fixture>
+   <Manufacturer>Robot Army</Manufacturer>
+   <Model>Delta 1</Model>
+   <Mode>Default</Mode>
+   <ID>77</ID>
+   <Name>Delta #78</Name>
+   <Universe>0</Universe>
+   <Address>467</Address>
+   <Channels>6</Channels>
+  </Fixture>
+  <Fixture>
+   <Manufacturer>Robot Army</Manufacturer>
+   <Model>Delta 1</Model>
+   <Mode>Default</Mode>
+   <ID>78</ID>
+   <Name>Delta #79</Name>
+   <Universe>0</Universe>
+   <Address>473</Address>
+   <Channels>6</Channels>
+  </Fixture>
+  <Fixture>
+   <Manufacturer>Robot Army</Manufacturer>
+   <Model>Delta 1</Model>
+   <Mode>Default</Mode>
+   <ID>79</ID>
+   <Name>Delta #80</Name>
+   <Universe>0</Universe>
+   <Address>479</Address>
+   <Channels>6</Channels>
+  </Fixture>
+  <Fixture>
+   <Manufacturer>Robot Army</Manufacturer>
+   <Model>Delta 1</Model>
+   <Mode>Default</Mode>
+   <ID>80</ID>
+   <Name>Delta #81</Name>
+   <Universe>0</Universe>
+   <Address>485</Address>
+   <Channels>6</Channels>
+  </Fixture>
+  <Fixture>
+   <Manufacturer>Robot Army</Manufacturer>
+   <Model>Delta 1</Model>
+   <Mode>Default</Mode>
+   <ID>81</ID>
+   <Name>Delta #82</Name>
+   <Universe>0</Universe>
+   <Address>491</Address>
+   <Channels>6</Channels>
+  </Fixture>
+  <Fixture>
+   <Manufacturer>Robot Army</Manufacturer>
+   <Model>Delta 1</Model>
+   <Mode>Default</Mode>
+   <ID>82</ID>
+   <Name>Delta #83</Name>
+   <Universe>0</Universe>
+   <Address>497</Address>
+   <Channels>6</Channels>
+  </Fixture>
+  <Fixture>
+   <Manufacturer>Robot Army</Manufacturer>
+   <Model>Delta 1</Model>
+   <Mode>Default</Mode>
+   <ID>83</ID>
+   <Name>Delta #84</Name>
+   <Universe>0</Universe>
+   <Address>503</Address>
+   <Channels>6</Channels>
+  </Fixture>
+  <Monitor DisplayMode="1" ShowLabels="1">
+   <Font>Arial,12,-1,5,50,0,0,0,0,0</Font>
+   <ChannelStyle>0</ChannelStyle>
+   <ValueStyle>0</ValueStyle>
+   <Grid Units="0" Width="8" Height="3"/>
+   <FxItem ID="61" XPos="5227.75" YPos="1118.07"/>
+   <FxItem ID="62" XPos="5217.98" YPos="1437.82"/>
+   <FxItem ID="63" XPos="6645.22" YPos="1376.88"/>
+   <FxItem ID="0" XPos="2212.44" YPos="466.867"/>
+   <FxItem ID="1" XPos="2219.44" YPos="771.862"/>
+   <FxItem ID="2" XPos="1911.08" YPos="911.336"/>
+   <FxItem ID="3" XPos="1597.32" YPos="784.104"/>
+   <FxItem ID="4" XPos="1595.53" YPos="472.733"/>
+   <FxItem ID="5" XPos="1907.61" YPos="304.589"/>
+   <FxItem ID="6" XPos="1906.41" YPos="609.154"/>
+   <FxItem ID="7" XPos="1191.68" YPos="633.117"/>
+   <FxItem ID="8" XPos="1184.25" YPos="946.646"/>
+   <FxItem ID="9" XPos="878.042" YPos="1110.01"/>
+   <FxItem ID="10" XPos="574.658" YPos="945.428"/>
+   <FxItem ID="11" XPos="575.684" YPos="650.814"/>
+   <FxItem ID="12" XPos="893.874" YPos="468.033"/>
+   <FxItem ID="13" XPos="889.427" YPos="781.582"/>
+   <FxItem ID="14" XPos="3180.91" YPos="312.624"/>
+   <FxItem ID="15" XPos="3175.36" YPos="609.192"/>
+   <FxItem ID="16" XPos="2871.37" YPos="754.119"/>
+   <FxItem ID="17" XPos="2572.91" YPos="631.4"/>
+   <FxItem ID="18" XPos="2570.93" YPos="324.174"/>
+   <FxItem ID="19" XPos="2875.55" YPos="156.582"/>
+   <FxItem ID="20" XPos="2873.66" YPos="457.16"/>
+   <FxItem ID="21" XPos="2884.51" YPos="1228.02"/>
+   <FxItem ID="22" XPos="2881.69" YPos="1542.74"/>
+   <FxItem ID="23" XPos="2575.59" YPos="1726.17"/>
+   <FxItem ID="24" XPos="2265.94" YPos="1560.34"/>
+   <FxItem ID="25" XPos="2264.98" YPos="1248.15"/>
+   <FxItem ID="26" XPos="2578.7" YPos="1065.33"/>
+   <FxItem ID="27" XPos="2578.37" YPos="1390.1"/>
+   <FxItem ID="28" XPos="1882.28" YPos="1417.74"/>
+   <FxItem ID="29" XPos="1881.95" YPos="1736.84"/>
+   <FxItem ID="30" XPos="1570.07" YPos="1858.07"/>
+   <FxItem ID="31" XPos="1259.78" YPos="1719.25"/>
+   <FxItem ID="64" XPos="6644.24" YPos="1676.53"/>
+   <FxItem ID="65" XPos="6336.79" YPos="1859.96"/>
+   <FxItem ID="66" XPos="6025.89" YPos="1724.28"/>
+   <FxItem ID="67" XPos="6025.58" YPos="1412.09"/>
+   <FxItem ID="68" XPos="6318.64" YPos="1211.06"/>
+   <FxItem ID="69" XPos="6338.37" YPos="1533.94"/>
+   <FxItem ID="70" XPos="6290.63" YPos="433.427"/>
+   <FxItem ID="71" XPos="6291.47" YPos="745.421"/>
+   <FxItem ID="72" XPos="5982.83" YPos="881.49"/>
+   <FxItem ID="73" XPos="5659.56" YPos="739.522"/>
+   <FxItem ID="74" XPos="5654.95" YPos="422.547"/>
+   <FxItem ID="75" XPos="5978.67" YPos="251.256"/>
+   <FxItem ID="76" XPos="5979.94" YPos="577.896"/>
+   <FxItem ID="77" XPos="7317.22" YPos="586.71"/>
+   <FxItem ID="78" XPos="7325.64" YPos="899.97"/>
+   <FxItem ID="79" XPos="7017.06" YPos="1034.77"/>
+   <FxItem ID="80" XPos="6706.33" YPos="904.121"/>
+   <FxItem ID="81" XPos="6700.42" YPos="597.197"/>
+   <FxItem ID="82" XPos="7011.67" YPos="427.136"/>
+   <FxItem ID="83" XPos="7017.19" YPos="732.011"/>
+   <FxItem ID="32" XPos="1263.84" YPos="1407.06"/>
+   <FxItem ID="33" XPos="1577.01" YPos="1231.81"/>
+   <FxItem ID="34" XPos="1570.8" YPos="1553.38"/>
+   <FxItem ID="35" XPos="4175.46" YPos="141.544"/>
+   <FxItem ID="36" XPos="4173.65" YPos="444.349"/>
+   <FxItem ID="37" XPos="3876.57" YPos="603.298"/>
+   <FxItem ID="38" XPos="3579.4" YPos="461.548"/>
+   <FxItem ID="39" XPos="3576.52" YPos="160.122"/>
+   <FxItem ID="40" XPos="3873.26" YPos="8.7373"/>
+   <FxItem ID="41" XPos="3870.83" YPos="310.314"/>
+   <FxItem ID="42" XPos="4182.74" YPos="1085.43"/>
+   <FxItem ID="43" XPos="4185.55" YPos="1386.32"/>
+   <FxItem ID="44" XPos="3886.87" YPos="1586.71"/>
+   <FxItem ID="45" XPos="3569.06" YPos="1415.86"/>
+   <FxItem ID="46" XPos="3568.1" YPos="1114.96"/>
+   <FxItem ID="47" XPos="3874.94" YPos="956.019"/>
+   <FxItem ID="48" XPos="3882.17" YPos="1267.6"/>
+   <FxItem ID="49" XPos="5226.54" YPos="250.61"/>
+   <FxItem ID="50" XPos="5226.26" YPos="573.494"/>
+   <FxItem ID="51" XPos="4916.82" YPos="719.853"/>
+   <FxItem ID="52" XPos="4599.61" YPos="606.166"/>
+   <FxItem ID="53" XPos="4594.91" YPos="309.053"/>
+   <FxItem ID="54" XPos="4922.51" YPos="97.9663"/>
+   <FxItem ID="55" XPos="4915.91" YPos="409.556"/>
+   <FxItem ID="56" XPos="5531.78" YPos="1257.53"/>
+   <FxItem ID="57" XPos="5524.54" YPos="1573.5"/>
+   <FxItem ID="58" XPos="5217" YPos="1763.19"/>
+   <FxItem ID="59" XPos="4906.69" YPos="1612.43"/>
+   <FxItem ID="60" XPos="4917.68" YPos="1283.28"/>
+  </Monitor>
+ </Engine>
+ <VirtualConsole>
+  <Frame Caption="">
+   <Appearance>
+    <FrameStyle>None</FrameStyle>
+    <ForegroundColor>Default</ForegroundColor>
+    <BackgroundColor>Default</BackgroundColor>
+    <BackgroundImage>None</BackgroundImage>
+    <Font>Default</Font>
+   </Appearance>
+  </Frame>
+  <Properties>
+   <Size Width="1920" Height="1080"/>
+   <GrandMaster SliderMode="Normal" ValueMode="Reduce" ChannelMode="Intensity"/>
+  </Properties>
+ </VirtualConsole>
+ <SimpleDesk>
+  <Engine/>
+ </SimpleDesk>
+</Workspace>
+
