@@ -57,8 +57,8 @@
 <layer number="47" name="Measures" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="48" name="Document" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="49" name="Reference" color="7" fill="1" visible="yes" active="yes"/>
-<layer number="51" name="tDocu" color="7" fill="1" visible="no" active="yes"/>
-<layer number="52" name="bDocu" color="7" fill="1" visible="no" active="yes"/>
+<layer number="51" name="tDocu" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="52" name="bDocu" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="91" name="Nets" color="2" fill="1" visible="no" active="no"/>
 <layer number="92" name="Busses" color="1" fill="1" visible="no" active="no"/>
 <layer number="93" name="Pins" color="2" fill="1" visible="no" active="no"/>
@@ -74,8 +74,10 @@
 <wire x1="15" y1="0" x2="15" y2="15" width="0" layer="20"/>
 <wire x1="15" y1="15" x2="0" y2="15" width="0" layer="20"/>
 <wire x1="0" y1="15" x2="0" y2="0" width="0" layer="20"/>
-<text x="7.6008" y="13.9812" size="1.524" layer="21" ratio="20" align="center">ROBOT ARMY</text>
-<text x="1.3716" y="5.6388" size="1.016" layer="21" rot="R90">Rev. B</text>
+<text x="7.6008" y="13.8288" size="1.524" layer="21" ratio="20" align="center">ROBOT ARMY</text>
+<text x="1.3716" y="5.6388" size="1.016" layer="21" rot="R90">Rev. C</text>
+<text x="7.4676" y="5.9436" size="6.4516" layer="22" font="vector" ratio="15" rot="SMR270" align="center">F</text>
+<text x="6.5532" y="11.2776" size="6.4516" layer="22" font="vector" ratio="15" rot="SMR270" align="center">:</text>
 </plain>
 <libraries>
 <library name="led">
@@ -198,7 +200,7 @@ RA = Right Angle&lt;p&gt;
 <class number="0" name="default" width="0" drill="0">
 </class>
 </classes>
-<designrules name="OSH">
+<designrules name="OSH-CircuitMonkey">
 <description language="de">&lt;b&gt;EAGLE Design Rules&lt;/b&gt;
 &lt;p&gt;
 Die Standard-Design-Rules sind so gewählt, dass sie für 
@@ -208,7 +210,9 @@ Einstellungen hier und speichern die Design Rules unter
 einem neuen Namen ab.</description>
 <description language="en">&lt;b&gt;Laen's PCB Order Design Rules&lt;/b&gt;
 &lt;p&gt;
-Please make sure your boards conform to these design rules.</description>
+Please make sure your boards conform to these design rules.
+
+13mil via mask limit added.</description>
 <param name="layerSetup" value="(1*16)"/>
 <param name="mtCopper" value="0.0356mm 0.0356mm 0.0356mm 0.0356mm 0.0356mm 0.0356mm 0.0356mm 0.0356mm 0.0356mm 0.0356mm 0.0356mm 0.0356mm 0.0356mm 0.0356mm 0.0356mm 0.0356mm"/>
 <param name="mtIsolate" value="1.5011mm 0.1499mm 0.2007mm 0.1499mm 0.2007mm 0.1499mm 0.2007mm 0.1499mm 0.2007mm 0.1499mm 0.2007mm 0.1499mm 0.2007mm 0.1499mm 0.2007mm"/>
@@ -262,7 +266,7 @@ Please make sure your boards conform to these design rules.</description>
 <param name="mlMaxStopFrame" value="3mil"/>
 <param name="mlMinCreamFrame" value="0mil"/>
 <param name="mlMaxCreamFrame" value="0mil"/>
-<param name="mlViaStopLimit" value="0mil"/>
+<param name="mlViaStopLimit" value="13mil"/>
 <param name="srRoundness" value="0"/>
 <param name="srMinRoundness" value="0mil"/>
 <param name="srMaxRoundness" value="0mil"/>
@@ -446,9 +450,9 @@ Please make sure your boards conform to these design rules.</description>
 <contactref element="LED" pad="4"/>
 <wire x1="13.4112" y1="8.6" x2="13.1932" y2="8.4476" width="0.4064" layer="1"/>
 <wire x1="13.1932" y1="8.4476" x2="13.1932" y2="8.7524" width="0.4064" layer="1"/>
-<wire x1="13.1932" y1="8.7524" x2="12.3444" y2="9.6012" width="0.4064" layer="1"/>
-<wire x1="12.3444" y1="9.6012" x2="9.184" y2="9.6012" width="0.4064" layer="1"/>
-<wire x1="9.184" y1="9.6012" x2="8.7852" y2="10" width="0.4064" layer="1"/>
+<wire x1="13.1932" y1="8.7524" x2="12.192" y2="9.7536" width="0.4064" layer="1"/>
+<wire x1="12.192" y1="9.7536" x2="9.0316" y2="9.7536" width="0.4064" layer="1"/>
+<wire x1="9.0316" y1="9.7536" x2="8.7852" y2="10" width="0.4064" layer="1"/>
 </signal>
 <signal name="N$2">
 <contactref element="J1" pad="3"/>
