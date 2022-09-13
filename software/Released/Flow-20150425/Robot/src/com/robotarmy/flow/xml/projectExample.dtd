@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='UTF-8'?>
+
+<!--
+    TODO define vocabulary identification
+    PUBLIC ID: -//vendor//vocabulary//EN
+    SYSTEM ID: http://server/path/projectExample.dtd
+
+-->
+
+<!--
+    An example how to use this DTD from your XML document:
+
+    <?xml version="1.0"?>
+
+    <!DOCTYPE root SYSTEM "projectExample.dtd">
+
+    <root>
+    ...
+    </root>
+-->
+
+<!--- Put your DTDDoc comment here. -->
+<!ELEMENT root (palette)*>
+
+<!--- Put your DTDDoc comment here. -->
+<!ELEMENT palette (delta)*>
+<!ATTLIST palette
+    addr CDATA #IMPLIED
+    name CDATA #IMPLIED
+    x CDATA #IMPLIED
+    y CDATA #IMPLIED
+  >
+
+<!--- Put your DTDDoc comment here. -->
+<!ELEMENT delta EMPTY>
+<!ATTLIST delta
+    addr CDATA #IMPLIED
+    name CDATA #IMPLIED
+  >

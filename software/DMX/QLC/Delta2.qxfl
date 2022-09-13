@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE FixtureList>
+<FixtureList xmlns="http://qlcplus.sourceforge.net/FixtureList">
+ <Creator>
+  <Name>Q Light Controller Plus</Name>
+  <Version>4.8.3</Version>
+  <Author>Mark Koch</Author>
+ </Creator>
+ <Fixture>
+  <Manufacturer>Robot Army</Manufacturer>
+  <Model>Delta</Model>
+  <Mode>Default</Mode>
+  <ID>1</ID>
+  <Name>Delta Robot</Name>
+  <Universe>0</Universe>
+  <Address>1</Address>
+  <Channels>6</Channels>
+ </Fixture>
+</FixtureList>
+

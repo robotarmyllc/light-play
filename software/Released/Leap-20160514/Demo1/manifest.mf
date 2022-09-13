@@ -1,0 +1,9 @@
+Manifest-Version: 1.0
+AutoUpdate-Show-In-Client: true
+OpenIDE-Module: com.robotarmy.leap
+OpenIDE-Module-Localizing-Bundle: com/robotarmy/leap/Bundle.properties
+OpenIDE-Module-Requires: 
+  org.openide.windows.IOProvider,
+  org.openide.windows.WindowManager
+OpenIDE-Module-Specification-Version: 1.0
+

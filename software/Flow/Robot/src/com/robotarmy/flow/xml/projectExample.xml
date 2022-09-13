@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--DOCTYPE root SYSTEM "projectExample.dtd"-->
+<!--
+Copyright 2015 Robot Army LLC
+
+Example XML file for storing layouts
+-->
+
+
+<root>
+    <palette addr='0' name="Chicken" x='-1000' y='0'>
+        <delta addr='0' name="Marek"/>
+        <delta addr='1' name="Stitchie"/>
+        <delta addr='2' name="Poopy"/>
+        <delta addr='3' name="Cheesy"/>
+        <delta addr='4' name="ChitterBug"/>
+        <delta addr='5' name="Kort"/>
+        <delta addr='6' name="Happy"/>
+    </palette>
+    <palette addr='0' name="Time Machine" x='0' y='0'>
+        <delta addr='0' name="Timmy"/>
+        <delta addr='1' name="MeatStar"/>
+        <delta addr='2' name="Mickey"/>
+        <delta addr='3' name="Olaf"/>
+        <delta addr='4' name="The Doctor"/>
+        <delta addr='5' name="Voldemort"/>
+        <delta addr='6' name="Santo"/>
+    </palette>
+    <palette addr='0' name="Create TV" x='1000' y='0'>
+        <delta addr='0' name="Jaque Pepin"/>
+        <delta addr='1' name="Ming Sai"/>
+        <delta addr='2' name="Chris Kimbal"/>
+        <delta addr='3' name="Martha Stewart"/>
+        <delta addr='4' name="Rick Steves"/>
+        <delta addr='5' name="Katie Brown"/>
+        <delta addr='6' name="Mr. Limpet"/>
+    </palette>
+</root>

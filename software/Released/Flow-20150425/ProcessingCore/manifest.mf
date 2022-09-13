@@ -1,0 +1,6 @@
+Manifest-Version: 1.0
+AutoUpdate-Show-In-Client: true
+OpenIDE-Module: com.robotarmy.processing.core
+OpenIDE-Module-Localizing-Bundle: com/robotarmy/processing/core/Bundle.properties
+OpenIDE-Module-Specification-Version: 1.0
+

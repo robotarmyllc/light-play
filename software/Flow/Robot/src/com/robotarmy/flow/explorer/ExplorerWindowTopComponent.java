@@ -1,0 +1,520 @@
+/*
+ * Explorer
+ *
+ * Copyright 2015  Robot Army LLC    http://robot-army.com
+ */
+package com.robotarmy.flow.explorer;
+
+import com.robotarmy.dmx.DmxConnectException;
+import com.robotarmy.dmx.DmxDisconnectException;
+import com.robotarmy.dmx.DmxManager;
+import com.robotarmy.flow.FlowDataObject;
+import com.robotarmy.flow.project.Project;
+import com.robotarmy.flow.project.ProjectChangeEvent;
+import com.robotarmy.flow.project.ProjectListener;
+import java.awt.Component;
+import java.awt.Graphics;
+import java.io.File;
+import java.io.IOException;
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.concurrent.ExecutionException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.Icon;
+import javax.swing.ImageIcon;
+import javax.swing.JOptionPane;
+import javax.swing.SwingWorker;
+import org.netbeans.api.settings.ConvertAsProperties;
+import org.netbeans.spi.actions.AbstractSavable;
+import org.openide.DialogDisplayer;
+import org.openide.NotifyDescriptor;
+import org.openide.awt.ActionID;
+import org.openide.awt.ActionReference;
+import org.openide.awt.NotificationDisplayer;
+import org.openide.explorer.ExplorerManager;
+import org.openide.explorer.ExplorerUtils;
+import org.openide.explorer.view.BeanTreeView;
+import org.openide.loaders.SaveAsCapable;
+import org.openide.nodes.AbstractNode;
+import org.openide.nodes.Children;
+import org.openide.util.Exceptions;
+import org.openide.util.ImageUtilities;
+import org.openide.util.Lookup;
+import org.openide.util.LookupEvent;
+import org.openide.util.LookupListener;
+import org.openide.util.NbBundle.Messages;
+import org.openide.util.Utilities;
+import org.openide.util.lookup.AbstractLookup;
+import org.openide.util.lookup.InstanceContent;
+import org.openide.util.lookup.ProxyLookup;
+import org.openide.windows.TopComponent;
+
+/**
+ * Top component which displays something.
+ */
+@ConvertAsProperties(
+        dtd = "-//com.robotarmy.flow.explorer//ExplorerWindow//EN",
+        autostore = false
+)
+@TopComponent.Description(
+        preferredID = "ExplorerWindowTopComponent",
+        //iconBase="SET/PATH/TO/ICON/HERE", 
+        persistenceType = TopComponent.PERSISTENCE_ALWAYS
+)
+@TopComponent.Registration(mode = "explorer", openAtStartup = true)
+@ActionID(category = "Window", id = "com.robotarmy.flow.explorer.ExplorerWindowTopComponent")
+@ActionReference(path = "Menu/Window" /*, position = 333 */)
+@TopComponent.OpenActionRegistration(
+        displayName = "#CTL_ExplorerWindowAction",
+        preferredID = "ExplorerWindowTopComponent"
+)
+@Messages({
+    "CTL_ExplorerWindowAction=ExplorerWindow",
+    "CTL_ExplorerWindowTopComponent=ExplorerWindow Window",
+    "HINT_ExplorerWindowTopComponent=This is a ExplorerWindow window",
+    "MSG_ExplorerWindowTopComponent=Could not load required dynamic library.",
+    "TITLE_ExplorerWindowTopComponent=Dynamic Library Not Found"
+})
+public final class ExplorerWindowTopComponent extends TopComponent implements LookupListener, ExplorerManager.Provider, ProjectListener {
+
+    private static final Logger LOG = Logger.getLogger("ExplorerWindow");
+    private static final long serialVersionUID = 1L;
+    private Lookup.Result<FlowDataObject> result = null;
+    //private Lookup.Result<FlowDataObject> result = null;
+    private final InstanceContent lookup = new InstanceContent();
+    private Project project = null;
+    private final transient ExplorerManager explorerManager = new ExplorerManager();
+
+    //private DMX dmx;
+    private DmxManager dmx = null;
+    //private int handle = -1;
+    private final static String PROPNAME_DEFAULT_PORT = "defaultPort";
+    private String defaultPort = "";
+
+    public ExplorerWindowTopComponent() {
+        LOG.setLevel(Level.FINEST);
+
+        Lookup joint = new ProxyLookup(
+                ExplorerUtils.createLookup(explorerManager, getActionMap()),
+                new AbstractLookup(lookup));
+        clearNodes();
+        associateLookup(joint);
+        initComponents();
+        setName(Bundle.CTL_ExplorerWindowTopComponent());
+        setToolTipText(Bundle.HINT_ExplorerWindowTopComponent());
+
+//        try {
+//            dmx = new DMX();
+//        } catch (java.lang.UnsatisfiedLinkError ex) {
+//            LOG.severe(Bundle.MSG_ExplorerWindowTopComponent());
+//            infoBox(Bundle.MSG_ExplorerWindowTopComponent(), Bundle.TITLE_ExplorerWindowTopComponent());
+//            LifecycleManager.getDefault().exit(2);
+//        }
+        // Populate the port selector with known ports.
+        updatePortSelector();
+
+    }
+
+    private void clearNodes() {
+        AbstractNode node = new AbstractNode(Children.LEAF);
+        node.setDisplayName("No Project Loaded");
+        explorerManager.setRootContext(node);
+    }
+    
+    /**
+     * This method is called from within the constructor to initialize the form.
+     * WARNING: Do NOT modify this code. The lookup of this method is always
+     * regenerated by the Form Editor.
+     */
+    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
+    private void initComponents() {
+
+        jPanel1 = new javax.swing.JPanel();
+        connectButton = new javax.swing.JButton();
+        portSelectorBox = new javax.swing.JComboBox<String>();
+        projectNodeScrollPane = new BeanTreeView();
+
+        org.openide.awt.Mnemonics.setLocalizedText(connectButton, org.openide.util.NbBundle.getMessage(ExplorerWindowTopComponent.class, "ExplorerWindowTopComponent.connectButton.text")); // NOI18N
+        connectButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                connectButtonActionPerformed(evt);
+            }
+        });
+
+        portSelectorBox.setModel(new javax.swing.DefaultComboBoxModel<String>(new String[]{"Port Name"})
+        );
+        portSelectorBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                portSelectorBoxActionPerformed(evt);
+            }
+        });
+
+        org.jdesktop.layout.GroupLayout jPanel1Layout = new org.jdesktop.layout.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+            .add(org.jdesktop.layout.GroupLayout.TRAILING, jPanel1Layout.createSequentialGroup()
+                .add(portSelectorBox, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, 246, Short.MAX_VALUE)
+                .add(connectButton)
+                .addContainerGap())
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+            .add(jPanel1Layout.createSequentialGroup()
+                .add(jPanel1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
+                    .add(connectButton)
+                    .add(portSelectorBox, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(41, Short.MAX_VALUE))
+        );
+
+        org.jdesktop.layout.GroupLayout layout = new org.jdesktop.layout.GroupLayout(this);
+        this.setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+            .add(jPanel1, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .add(projectNodeScrollPane, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 400, Short.MAX_VALUE)
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+            .add(layout.createSequentialGroup()
+                .add(jPanel1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                .add(projectNodeScrollPane, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 224, Short.MAX_VALUE))
+        );
+    }// </editor-fold>//GEN-END:initComponents
+
+    private void connectButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_connectButtonActionPerformed
+        ImageIcon icon = createImageIcon("PortScan.png", "Port scan icon");
+        if (dmx == null) {
+            connectButton.setText("Connect");
+            connectButton.setEnabled(false);
+        }
+
+        if (!dmx.hasConnection()) {
+            // User pressed button when it was 'Connect'
+            String device = (String) portSelectorBox.getSelectedItem();
+            device = device.substring(0, device.indexOf(' '));
+            if (!device.startsWith("FT")) {
+                LOG.log(Level.WARNING, "Connecting to suspicious device [{0}]", device);
+            }
+
+            try {
+                dmx.connect();
+                connectButton.setEnabled(true);
+                connectButton.setText("Disconnect");
+                NotificationDisplayer.getDefault().notify("DMX Connect", icon, "Connected to " + device + ".", null);
+            } catch (DmxConnectException ex) {
+                Exceptions.printStackTrace(ex);
+                NotificationDisplayer.getDefault().notify("DMX Connect", icon, "Failed connecting to " + device + ".", null);
+            }
+        } else {
+            // User pressed button when it was 'Disconnect'
+            try {
+                dmx.disconnect();
+                connectButton.setText("Connect");
+                NotificationDisplayer.getDefault().notify("DMX Disconnect", icon, "Disconnected OK", null);
+            } catch (DmxDisconnectException ex) {
+                NotificationDisplayer.getDefault().notify("DMX Disconnect", icon, "Failed during disconnect.", null);
+            }
+        }
+    }//GEN-LAST:event_connectButtonActionPerformed
+
+    private void portSelectorBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_portSelectorBoxActionPerformed
+        if (portSelectorBox.getItemCount() == 0) {
+            return;
+        }
+        // There are items.
+        int selectedIndex = portSelectorBox.getSelectedIndex();
+        if (selectedIndex == 0) {
+            // No port selected
+            connectButton.setEnabled(false);
+            dmx = null;
+        } else if (selectedIndex == portSelectorBox.getItemCount() - 1) {
+            //Rescan selected
+            connectButton.setEnabled(false);
+            updatePortSelector();
+        } else if (portSelectorBox.getItemCount() > 2) {
+            connectButton.setEnabled(true);
+            defaultPort = (String) portSelectorBox.getSelectedItem();
+            String[] s = defaultPort.split(" ");
+            dmx = DmxManager.getInstance(s[0]);
+            dmx.setUniverse(0);
+        }
+    }//GEN-LAST:event_portSelectorBoxActionPerformed
+
+    // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton connectButton;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JComboBox<String> portSelectorBox;
+    private javax.swing.JScrollPane projectNodeScrollPane;
+    // End of variables declaration//GEN-END:variables
+    @Override
+    public void componentOpened() {
+        result = Utilities.actionsGlobalContext().lookupResult(FlowDataObject.class);
+        result.addLookupListener(this);
+    }
+
+    @Override
+    public void componentClosed() {
+        // TODO:  Ask user if they want to close the project.
+        
+        result.removeLookupListener(this);
+    }
+
+    @Override
+    public void resultChanged(LookupEvent ev) {
+        Collection<? extends FlowDataObject> allEvents = result.allInstances();
+        if (!allEvents.isEmpty()) {
+            FlowDataObject event = allEvents.iterator().next();
+            setProject(event.getProject());
+//            setProject(event.getProject());
+            //LOG.config("Something was in the lookup for Explorer.");
+        } else {
+            setProject(null);
+        }
+    }
+
+    void writeProperties(java.util.Properties p) {
+        // better to version settings since initial version as advocated at
+        // http://wiki.apidesign.org/wiki/PropertyFiles
+        p.setProperty("version", "1.0");
+        // TODO store your settings
+        p.setProperty(PROPNAME_DEFAULT_PORT, defaultPort);
+    }
+
+    void readProperties(java.util.Properties p) {
+        String version = p.getProperty("version");
+        // TODO read your settings according to their version
+        defaultPort = p.getProperty(PROPNAME_DEFAULT_PORT, "");
+    }
+
+    public static void infoBox(String infoMessage, String titleBar) {
+        JOptionPane.showMessageDialog(null, infoMessage, "InfoBox: " + titleBar, JOptionPane.INFORMATION_MESSAGE);
+    }
+
+    private void updatePortSelector() {
+        SwingWorker<String[], Void> worker = new SwingWorker<String[], Void>() {
+            @Override
+            public String[] doInBackground() {
+                connectButton.setEnabled(false);
+                portSelectorBox.removeAllItems();
+                portSelectorBox.addItem("Scanning");
+                portSelectorBox.setEnabled(false);
+                return DmxManager.getSerials();
+            }
+
+            @Override
+            public void done() {
+                connectButton.setEnabled(false);
+                ImageIcon icon = createImageIcon("PortScan.png", "Port scan icon");
+                portSelectorBox.removeAllItems();
+
+                int selected = 0;
+
+                try {
+                    String[] list = get();
+                    NotificationDisplayer.getDefault().notify("Port Scan", icon, "Found " + list.length + " devices.", null);
+                    portSelectorBox.addItem("No Port Selected");
+                    LOG.warning(Arrays.toString(list));
+                    for (String item : list) {
+                        LOG.log(Level.WARNING, "Device: {0}\n", item);
+                        String[] split = item.split(":");
+                        if (split.length == 3) {
+                            String s = split[1] + " (" + split[2] + ")";
+                            portSelectorBox.addItem(s);
+                            if (defaultPort.equals(s)) {
+                                selected = portSelectorBox.getItemCount() - 1;
+                                dmx = DmxManager.getInstance(defaultPort);
+                            }
+                        } else {
+                            NotificationDisplayer.getDefault().notify(
+                                    "Port Scan", icon,
+                                    "Could not get device serial number.\nPerhaps D2XX drivers are disabled?", null);
+                            break;
+                        }
+                    }
+                    portSelectorBox.addItem("Re-scan");
+                    portSelectorBox.setEnabled(true);
+                } catch (InterruptedException | ExecutionException ex) {
+                    portSelectorBox.addItem("Scan Error!");
+                    selected = 0;
+                    Exceptions.printStackTrace(ex);
+                }
+                portSelectorBox.setSelectedIndex(selected);
+            }
+        };
+
+        worker.execute();
+    }
+
+    protected ImageIcon createImageIcon(String path,
+            String description) {
+        java.net.URL imgURL = getClass().getResource(path);
+        if (imgURL != null) {
+            return new ImageIcon(imgURL, description);
+        } else {
+            System.err.println("Couldn't find file: " + path);
+            return null;
+        }
+    }
+
+    /**
+     * Start a new project. Called by "New Project" action.
+     */
+    public void invokeNewProject() {
+        LOG.finest("Invoke new project.");
+        if (project != null) {
+            // Check if project needs saving.
+
+            // Otherwise, ask user if that is really what they want to do.
+            String msg = "Do you really want to start a new project?";
+            NotifyDescriptor nd = new NotifyDescriptor.Confirmation(msg, NotifyDescriptor.YES_NO_OPTION);
+            Object dialogResult = DialogDisplayer.getDefault().notify(nd);
+            if (NotifyDescriptor.OK_OPTION != dialogResult) {
+                return;
+            }
+            project.close();
+            project = null;
+        }
+
+        //openProject(null);
+    }
+
+    /**
+     * Open a project from a file. Called by "Open Project" Action
+     */
+    public void invokeOpenProject() {
+        if (project != null) {
+            // Resolve condidtion where there is an existing project.
+
+            // If Save needed then prompt to save.
+            // If no save needed then Dialog user to confirm action.
+            // Null out old project.
+            project.close();
+            project = null;
+        }
+
+        openProject(new File("/Users/mark/Desktop/projectExample.xml"));
+    }
+
+    private void openProject(File file) {
+//        project = new Project(file);
+//        lookup.add(project);
+//        project.addListener(this);
+//        explorerManager.setRootContext(project.getRootNode());
+        //explorerManager.getRootContext().setDisplayName("Root"); // Do this in the FlowNode
+    }
+
+    private void setProject(Project p) {
+        if (p == null) {
+            if ( project != null ) {
+                clearNodes();
+                project.removeListener(this);
+                project = null;
+            }
+        } else {
+            project = p;
+            project.addListener(this);
+            explorerManager.setRootContext(project.getRootNode());
+        }
+    }
+
+    @Override
+    public ExplorerManager getExplorerManager() {
+        return explorerManager;
+    }
+
+    @Override
+    public void projectChanged(ProjectChangeEvent e) {
+        switch (e.getType()) {
+            case DATA_CHANGED:
+                // Regenerate Nodes Children
+                //FlowNode n = (FlowNode) explorerManager.getRootContext();
+                LOG.config("Project Data has changed.");
+                modify();
+                break;
+            case FILE_SAVED:
+                LOG.config("File Saved.");
+                Savable s = getLookup().lookup(Savable.class);
+                if (s != null) {
+                    lookup.remove(s);
+                }
+        }
+    }
+
+    private void modify() {
+        if (getLookup().lookup(Savable.class) == null) {
+            lookup.add(new Savable());
+        }
+    }
+
+    public Project getProject() {
+        return project;
+    }
+
+    private static final Icon ICON = ImageUtilities.loadImageIcon("com/robotarmy/flow/icon/Savable.png", true);
+
+    /**
+     * Savable
+     */
+    private class Savable extends AbstractSavable implements Icon, SaveAsCapable {
+
+        Savable() {
+            register();
+        }
+
+        @Override
+        protected String findDisplayName() {
+            return tc().getProject().getName();
+        }
+
+        @Override
+        protected void handleSave() throws IOException {
+            tc().getProject().doSave();
+            //tc().lookup.remove(this);
+            LOG.finest("Savable.handleSave() called.");
+            unregister();
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof Savable) {
+                Savable m = (Savable) obj;
+                return tc() == m.tc();
+            }
+            return false;
+        }
+
+        private ExplorerWindowTopComponent tc() {
+            return ExplorerWindowTopComponent.this;
+        }
+
+        @Override
+        public int hashCode() {
+            return tc().hashCode();
+        }
+
+        @Override
+        public void paintIcon(Component c, Graphics g, int x, int y) {
+            ICON.paintIcon(c, g, x, y);
+        }
+
+        @Override
+        public int getIconWidth() {
+            return ICON.getIconWidth();
+        }
+
+        @Override
+        public int getIconHeight() {
+            return ICON.getIconHeight();
+        }
+
+        @Override
+        public void saveAs(org.openide.filesystems.FileObject arg0, String arg1) throws IOException {
+            throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        }
+    }
+
+}
